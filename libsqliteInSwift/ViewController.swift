@@ -13,6 +13,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        LibsqliteHander.runNormalSql("create table if not exists Student(name text PRIMARY KEY,age integer DEFAULT 15)");
+        
+        LibsqliteHander.runNormalSql("insert into Student(name,age) values(\"杰1\",19)")
+        LibsqliteHander.runNormalSql("insert into Student(name,age) values(\"杰2\",18)")
+        LibsqliteHander.runNormalSql("insert into Student(name,age) values(\"杰3\",17)")
+        
+        LibsqliteHander.selectSql();
     }
 
     override func didReceiveMemoryWarning() {
